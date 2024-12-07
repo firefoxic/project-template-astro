@@ -6,6 +6,7 @@ import { default as firefoxicEslintConfig, globals } from "@firefoxic/eslint-con
 export default [
 	{
 		ignores: [
+			`.astro/`,
 			`dist/`,
 			`src/shared/vendor/`,
 			`index.js`,
