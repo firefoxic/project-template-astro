@@ -17,5 +17,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Initial configuration of the project.
 
-[Unreleased]: https://github.com/firefoxic/project-template-astro-svelte/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/firefoxic/project-template-astro-svelte/releases/tag/v0.1.0
+[Unreleased]: https://github.com/firefoxic/project-template-astro/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/firefoxic/project-template-astro/releases/tag/v0.1.0

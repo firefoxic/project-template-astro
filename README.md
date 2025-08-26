@@ -1,9 +1,9 @@
-# project-template-astro-svelte
+# project-template-astro
 
 [![License: MIT][license-image]][license-url]
 [![Changelog][changelog-image]][changelog-url]
 
-Project template based on Astro and Svelte.
+Project template based on Astro.
 
 ## Minimum Required Environment
 
@@ -34,7 +34,7 @@ and begin development.
 
 ## Components
 
-Independent (as much as possible) components are located in `src/components/`, as an [Astro](https://astro.build) or [Svelte](https://svelte.dev) _single file component_ named in PascalCase with the appropriate extension `.astro` or `.svelte`.
+Independent (as much as possible) components are located in `src/components/`, as an [Astro](https://astro.build) _single file component_ named in PascalCase with the appropriate extension `.astro`.
 
 For component organization, follow the BEM methodology. For CSS classes, use the so-called React notation:
 
@@ -236,8 +236,8 @@ If deploying to a server subdirectory, pass the subdirectory name to `base` 
 
 The project is already set up with a GitHub Action for deploying to GitHub Pages with the ability to deploy to a project subdirectory. The action automatically passes the project name as the subdirectory name to the `base` option by calling the `getProjectRoot()` utility.
 
-[license-url]: https://github.com/firefoxic/project-template-gulp-nunjucks/blob/main/LICENSE.md
+[license-url]: https://github.com/firefoxic/project-template-astro/blob/main/LICENSE.md
 [license-image]: https://img.shields.io/badge/License-MIT-limegreen.svg
 
-[changelog-url]: https://github.com/firefoxic/project-template-gulp-nunjucks/blob/main/CHANGELOG.md
+[changelog-url]: https://github.com/firefoxic/project-template-astro/blob/main/CHANGELOG.md
 [changelog-image]: https://img.shields.io/badge/Changelog-md-limegreen

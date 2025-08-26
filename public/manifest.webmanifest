@@ -1,6 +1,6 @@
 {
-	"name": "project-template-astro-svelte",
-	"description": "Project template based on Astro and Svelte.",
+	"name": "project-template-astro",
+	"description": "Project template based on Astro.",
 	"icons": [
 		{
 			"src": "./favicons/icon-192.png",
