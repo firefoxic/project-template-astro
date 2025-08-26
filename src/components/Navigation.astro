@@ -47,14 +47,16 @@ let { navLinks } = Astro.props
 			border-radius: 0.5em;
 			box-shadow: 0 0.1em 1em 0 oklch(from var(--ColorUI-Text) l c h / var(--shadow-alpha, 0));
 			transition: box-shadow var(--motion-duration, 0.1s);
+		}
 
-			&:hover {
-				@media (hover: hover) {
-					--shadow-alpha: 0.5;
-				}
+		&:hover {
+			@media (width < 640px) and (hover: hover) {
+				--shadow-alpha: 0.5;
 			}
+		}
 
-			&:active {
+		&:active {
+			@media (width < 640px) {
 				--shadow-alpha: 0;
 			}
 		}
@@ -100,13 +102,17 @@ let { navLinks } = Astro.props
 		padding: 1em;
 		margin: 0.5em;
 		border-radius: 0.5em;
+	}
 
-		:not([hidden]) ~ & {
+	:not([hidden]) ~ & {
+		@media (width < 640px) {
 			position: absolute;
 			inset-inline-end: -0.5em;
 		}
+	}
 
-		[aria-expanded="false"] ~ & {
+	[aria-expanded="false"] ~ & {
+		@media (width < 640px) {
 			display: none;
 		}
 	}

@@ -13,7 +13,6 @@ src/**/*.png
 
 # generated files
 public/Links.md
-src/shared/images/**/*.json
 
 # source favicons
 public/16.svg

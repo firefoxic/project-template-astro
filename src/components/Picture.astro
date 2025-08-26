@@ -1,6 +1,15 @@
 ---
+import { readFile } from "node:fs/promises"
+
 let { name, alt } = Astro.props
-let { maxDensity, sizes, formats, dests } = await import(`../shared/images/${name}.js`).then((m) => m.default)
+let { maxDensity, sizes, formats } = await readJsonFile(`./src/shared/images/${name}.meta.json`)
+let { default: dests } = await import(`../shared/images/${name}.imports.js`)
+
+async function readJsonFile (path) {
+	let file = await readFile(path)
+
+	return JSON.parse(file.toString())
+}
 ---
 
 <picture>
@@ -12,7 +21,7 @@ let { maxDensity, sizes, formats, dests } = await import(`../shared/images/${nam
 		let srcset = ``
 
 		for (let density = maxDensity; density !== 0; density--) {
-			let sourceName = `${name}${breakpoint ? `-` : ``}${breakpoint}@${density}x`
+			let sourceName = `${name}${breakpoint ? `~` : ``}${breakpoint}@${density}x`
 			let destPath = dests.find((path) => path.includes(sourceName) && path.endsWith(format))
 			let descriptor = density !== 1 ? ` ${density}x` : ``
 
@@ -40,7 +49,7 @@ let { maxDensity, sizes, formats, dests } = await import(`../shared/images/${nam
 					type={`image/${format}`}
 					width={width}
 					height={height}
-					media={breakpoint ? `(width >= ${breakpoint}px)` : undefined}
+					media={breakpoint ? `(width <= ${breakpoint}px)` : undefined}
 					>
 			)
 	}))}
