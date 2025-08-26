@@ -1,8 +1,7 @@
-import browserslistToEsbuild from "browserslist-to-esbuild"
-import { defineConfig } from "astro/config"
-import { getProjectRoot } from "@firefoxic/utils"
 import sitemap from "@astrojs/sitemap"
-import svelte from "@astrojs/svelte"
+import { getProjectRoot } from "@firefoxic/utils"
+import { defineConfig } from "astro/config"
+import browserslistToEsbuild from "browserslist-to-esbuild"
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,15 +9,12 @@ export default defineConfig({
 	build: {
 		assets: `assets`,
 	},
-	integrations: [
-		svelte(),
-		sitemap(),
-	],
+	integrations: [sitemap()],
 	scopedStyleStrategy: `class`,
 	server: {
 		host: true,
 	},
-	site: `https://firefoxic.github.io/project-template-astro-svelte/`,
+	site: `https://firefoxic.github.io/project-template-astro/`,
 	vite: {
 		build: {
 			assetsInlineLimit: 0,

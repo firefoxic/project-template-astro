@@ -1,6 +1,6 @@
 {
-	"name": "project-template-astro-svelte",
-	"description": "Project template based on Astro and Svelte.",
+	"name": "project-template-astro",
+	"description": "Project template based on Astro.",
 	"private": true,
 	"version": "0.1.0",
 	"license": "MIT",
@@ -8,13 +8,13 @@
 		"name": "Sergey Artemov",
 		"email": "firefoxic.dev@gmail.com"
 	},
-	"homepage": "https://github.com/firefoxic/project-template-astro-svelte#readme",
+	"homepage": "https://github.com/firefoxic/project-template-astro#readme",
 	"bugs": {
-		"url": "https://github.com/firefoxic/project-template-astro-svelte/issues"
+		"url": "https://github.com/firefoxic/project-template-astro/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/firefoxic/project-template-astro-svelte.git"
+		"url": "git+https://github.com/firefoxic/project-template-astro.git"
 	},
 	"type": "module",
 	"engines": {
@@ -30,7 +30,7 @@
 		"version": "update-changelog",
 		"lint": "pnpm /^lint:/",
 		"lint:es": "eslint",
-		"lint:css": "stylelint src/**/*.{astro,css,svelte}",
+		"lint:css": "stylelint src/**/*.{astro,css}",
 		"optimize": "conjure all -r -m",
 		"optimize:icons": "conjure icons -m",
 		"optimize:images": "conjure images -r -m",
@@ -42,7 +42,6 @@
 	},
 	"devDependencies": {
 		"@astrojs/sitemap": "^3.5.1",
-		"@astrojs/svelte": "^7.1.0",
 		"@firefoxic/optimize": "^4.0.0",
 		"@firefoxic/eslint-config": "^5.0.0",
 		"@firefoxic/stylelint-config": "^5.0.0",
@@ -52,12 +51,10 @@
 		"browserslist-to-esbuild": "^2.1.1",
 		"eslint": "^9.34.0",
 		"eslint-plugin-astro": "^1.3.1",
-		"eslint-plugin-svelte": "^3.11.0",
 		"postcss-html": "^1.8.0",
 		"postcss-lightningcss": "^1.0.1",
 		"postcss-url": "^10.1.3",
 		"stylelint": "^16.23.1",
-		"stylelint-config-html": "^1.1.0",
-		"svelte": "^5.38.3"
+		"stylelint-config-html": "^1.1.0"
 	}
 }

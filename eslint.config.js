@@ -1,6 +1,5 @@
-import eslintPluginAstro from "eslint-plugin-astro"
-import eslintPluginSvelte from "eslint-plugin-svelte"
 import { default as firefoxicEslintConfig, globals } from "@firefoxic/eslint-config"
+import eslintPluginAstro from "eslint-plugin-astro"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -21,7 +20,7 @@ export default [
 		},
 	},
 	{
-		files: [`src/**/*.{astro,js,svelte}`],
+		files: [`src/**/*.{astro,js}`],
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -29,7 +28,7 @@ export default [
 		},
 	},
 	{
-		files: [`src/**/*.{astro,svelte}`],
+		files: [`src/**/*.astro`],
 		languageOptions: {
 			globals: {
 				...globals.nodeBuiltin,
@@ -37,7 +36,6 @@ export default [
 		},
 	},
 	...firefoxicEslintConfig,
-	...eslintPluginSvelte.configs[`flat/recommended`],
 	...eslintPluginAstro.configs.recommended,
 	{
 		rules: {
