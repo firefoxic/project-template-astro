@@ -1,4 +1,8 @@
 {
+	"project": {
+		"name": "Project template",
+		"description": "Project template based on Astro."
+	},
 	"navLinks": [
 		{
 			"text": "Main page",
@@ -12,5 +16,55 @@
 			"text": "Lost page",
 			"path": "/lost"
 		}
-	]
+	],
+	"images": {
+		"aurora": {
+			"name": "aurora",
+			"maxDensity": 2,
+			"formats": [
+				"avif",
+				"webp"
+			],
+			"sizes": [
+				{
+					"width": 640,
+					"height": 518,
+					"breakpoint": 640
+				},
+				{
+					"width": 1280,
+					"height": 848,
+					"breakpoint": 1280
+				},
+				{
+					"width": 2048,
+					"height": 1152
+				}
+			]
+		},
+		"eclipse": {
+			"name": "eclipse",
+			"maxDensity": 2,
+			"formats": [
+				"avif",
+				"webp"
+			],
+			"sizes": [
+				{
+					"width": 640,
+					"height": 518,
+					"breakpoint": 640
+				},
+				{
+					"width": 1280,
+					"height": 848,
+					"breakpoint": 1280
+				},
+				{
+					"width": 2048,
+					"height": 1152
+				}
+			]
+		}
+	}
 }

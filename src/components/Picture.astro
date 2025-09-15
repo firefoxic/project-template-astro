@@ -1,15 +1,8 @@
 ---
-import { readFile } from "node:fs/promises"
+import { images } from "../shared/data.json" with { type: "json" }
 
-let { name, alt } = Astro.props
-let { maxDensity, sizes, formats } = await readJsonFile(`./src/shared/images/${name}.meta.json`)
-let { default: dests } = await import(`../shared/images/${name}.imports.js`)
-
-async function readJsonFile (path) {
-	let file = await readFile(path)
-
-	return JSON.parse(file.toString())
-}
+let { name, class: classList, alt = ``, loading = `lazy`, decoding = `async` } = Astro.props
+let { maxDensity, sizes, formats } = images[name]
 ---
 
 <picture>
@@ -22,25 +15,24 @@ async function readJsonFile (path) {
 
 		for (let density = maxDensity; density !== 0; density--) {
 			let sourceName = `${name}${breakpoint ? `~` : ``}${breakpoint}@${density}x`
-			let destPath = dests.find((path) => path.includes(sourceName) && path.endsWith(format))
+			let destPath = `/images/${sourceName}.${format}`
 			let descriptor = density !== 1 ? ` ${density}x` : ``
 
-			if (isImgTag && density === 1) {
-				src = destPath
-			} else {
-				srcset += `${srcset ? `, ` : ``}${destPath}${descriptor}`
-			}
+			if (isImgTag && density === 1) src = destPath
+			else srcset += `${srcset ? `, ` : ``}${destPath}${descriptor}`
 		}
 
 		return isImgTag
 			? (
 				<img
-					class:list={Astro.props.class}
+					class:list={classList}
 					src={src}
 					srcset={srcset}
 					width={width}
 					height={height}
-					alt={alt || ``}
+					alt={alt}
+					loading={loading}
+					decoding={decoding}
 					>
 			)
 			: (
