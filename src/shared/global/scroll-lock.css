@@ -1,5 +1,5 @@
 :root {
-	&:has(dialog[open]) {
+	&:has(dialog:is([open], :popover-open)) {
 		overflow: hidden;
 	}
 }
