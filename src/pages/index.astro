@@ -1,7 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/base-layout.astro"
 
-import Picture from "../components/Picture.astro"
+import ThePicture from "../components/the-picture.astro"
 
 let page = {
 	title: `Main Page`,
@@ -14,7 +14,7 @@ let page = {
 	<div class="Page-Centerer">
 		<h1>{page.title}</h1>
 
-		<Picture class:list={[`Image`]} name="eclipse" alt="Eclipse" />
+		<ThePicture class:list={[`Image`]} name="eclipse" alt="Eclipse" />
 	</div>
 
 </BaseLayout>
