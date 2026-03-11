@@ -1,49 +1,25 @@
 {
-	"name": "project-template-astro",
-	"description": "Project template based on Astro.",
 	"private": true,
-	"version": "0.1.0",
-	"license": "MIT",
-	"author": {
-		"name": "Sergey Artemov",
-		"email": "firefoxic.dev@gmail.com"
-	},
-	"homepage": "https://github.com/firefoxic/project-template-astro#readme",
-	"bugs": {
-		"url": "https://github.com/firefoxic/project-template-astro/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/firefoxic/project-template-astro.git"
-	},
 	"type": "module",
-	"engines": {
-		"node": ">=22.18"
-	},
 	"scripts": {
-		"prepare": "git config --local core.hooksPath .githooks",
-		"astro": "astro",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro build && astro preview",
-		"version": "update-changelog",
-		"lint": "pnpm /^lint:/",
-		"lint:es": "eslint",
-		"lint:css": "stylelint src/**/*.{astro,css}",
-		"optimize": "optimize"
+		"help": "make help",
+		"prepare": "make setup"
+	},
+	"engines": {
+		"node": ">=22.18",
+		"pnpm": ">=10.32.0"
 	},
 	"dependencies": {
+		"@astrojs/sitemap": "^3.7.1",
 		"@fontsource-variable/roboto-flex": "^5.2.8",
-		"@fontsource-variable/roboto-mono": "^5.2.8"
+		"@fontsource-variable/roboto-mono": "^5.2.8",
+		"astro": "^6.0.2"
 	},
 	"devDependencies": {
-		"@astrojs/sitemap": "^3.7.1",
 		"@firefoxic/eslint-config": "^8.0.0",
 		"@firefoxic/optimize": "^5.1.0",
 		"@firefoxic/stylelint-config": "^6.0.1",
-		"@firefoxic/update-changelog": "^2.0.2",
 		"@firefoxic/utils": "^2.1.1",
-		"astro": "^6.0.2",
 		"browserslist": "^4.28.1",
 		"browserslist-to-esbuild": "^2.1.1",
 		"eslint": "^10.0.3",
