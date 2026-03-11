@@ -39,7 +39,7 @@ export default [
 	...eslintPluginAstro.configs.recommended,
 	{
 		rules: {
-			"@stylistic/js/semi": [
+			"@stylistic/semi": [
 				`error`,
 				`never`,
 				{ beforeStatementContinuationChars: `any` },

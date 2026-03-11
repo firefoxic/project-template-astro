@@ -21,7 +21,6 @@ export default defineConfig({
 		assets: `assets`,
 	},
 	integrations: [sitemap()],
-	scopedStyleStrategy: `class`,
 	server: {
 		host: true,
 		open: true,
@@ -30,19 +29,17 @@ export default defineConfig({
 	site: `https://firefoxic.github.io/project-template-astro/`,
 	vite: {
 		build: {
-			cssMinify: undefined,
+			cssMinify: `lightningcss`,
 			emptyOutDir: true,
 			target: browserslistToEsbuild(),
 		},
 		resolve: {
 			alias: {
-				'@': fileURLToPath(new URL(`./src`, import.meta.url)),
+				"@/": fileURLToPath(new URL(`./src/`, import.meta.url)),
 			},
 		},
 		css: {
 			lightningcss: {
-				cssModules: true,
-				minify: false,
 				targets,
 			},
 			transformer: `lightningcss`,

@@ -1,14 +1,14 @@
 ---
+import fontPath from "@fontsource-variable/roboto-flex/files/roboto-flex-latin-wght-normal.woff2"
+
 import "@fontsource-variable/roboto-flex/wght.css"
 import "@fontsource-variable/roboto-mono/wght.css"
 import "@fontsource-variable/roboto-mono/wght-italic.css"
-
-import fontPath from "@fontsource-variable/roboto-flex/files/roboto-flex-latin-wght-normal.woff2"
 ---
 
 <link rel="preload" href={fontPath} as="font" type="font/woff2" crossorigin="anonymous" >
 
-<style>
+<style is:global>
 :root {
 	--FontMain-Family: roboto flex variable, ui-sans-serif, sans-serif;
 	--FontMain-Ex: 0.513671875;
