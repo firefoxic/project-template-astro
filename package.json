@@ -16,15 +16,15 @@
 		"astro": "^6.0.2"
 	},
 	"devDependencies": {
-		"@firefoxic/eslint-config": "^8.0.0",
 		"@firefoxic/optimize": "^5.1.0",
+		"@firefoxic/oxlint-config": "^0.3.0",
 		"@firefoxic/stylelint-config": "^6.0.1",
 		"@firefoxic/utils": "^2.1.1",
 		"browserslist": "^4.28.1",
 		"browserslist-to-esbuild": "^2.1.1",
-		"eslint": "^10.0.3",
 		"eslint-plugin-astro": "^1.6.0",
 		"lightningcss": "^1.32.0",
+		"oxlint": "^1.53.0",
 		"stylelint": "^17.4.0",
 		"stylelint-config-html": "^1.1.0"
 	}

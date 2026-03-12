@@ -1,0 +1,93 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"extends": [
+		"./node_modules/@firefoxic/oxlint-config/lib/syntactic.jsonc",
+		"./node_modules/@firefoxic/oxlint-config/lib/stylistic.jsonc",
+	],
+	"jsPlugins": [
+		"eslint-plugin-astro",
+	],
+	"overrides": [
+		{
+			"files": [
+				"src/**/*.{js,ts}",
+			],
+			"env": {
+				"browser": true,
+			},
+		},
+		{
+			"files": [
+				"**/*.{js,ts}",
+				"!src/**/*.{js,ts}",
+			],
+			"env": {
+				"node": true,
+			},
+		},
+		{
+			"files": [
+				"src/**/*.astro"
+			],
+			"env": {
+				"browser": true,
+				"node": true,
+				"es2024": true,
+			},
+			"globals": {
+				"Astro": "readonly",
+				"Fragment": "readonly",
+			},
+			"rules": {
+				"import/no-unassigned-import": [
+					"error",
+					{
+						"allow": [
+							"**/*.{css,js}"
+						],
+					},
+				],
+				"astro/missing-client-only-directive-value": "error",
+				"astro/no-conflict-set-directives": "error",
+				"astro/no-deprecated-astro-canonicalurl": "error",
+				"astro/no-deprecated-astro-fetchcontent": "error",
+				"astro/no-deprecated-astro-resolve": "error",
+				"astro/no-deprecated-getentrybyslug": "error",
+				"astro/no-exports-from-components": "error",
+				"astro/no-set-html-directive": "error",
+				"astro/no-set-text-directive": "error",
+				"astro/no-unsafe-inline-scripts": "error",
+				"astro/no-unused-css-selector": "error",
+				"astro/no-unused-define-vars-in-style": "error",
+				"astro/prefer-class-list-directive": "error",
+				"astro/prefer-object-class-list": "error",
+				"astro/prefer-split-class-list": "error",
+				"astro/semi": [
+					"error",
+					"never",
+					{
+						"beforeStatementContinuationChars": "always"
+					},
+				],
+				"astro/valid-compile": "error",
+				"@stylistic/no-multiple-empty-lines": [
+					"error",
+					{
+						"max": 1,
+						"maxEOF": 0,
+						"maxBOF": 1,
+					},
+				],
+			},
+		},
+		{
+			"files": [
+				"env.d.ts",
+				"src/**/*.astro"
+			],
+			"rules": {
+				"import/unambiguous": "off",
+			},
+		},
+	],
+}
