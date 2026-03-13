@@ -37,19 +37,19 @@ let { page } = Astro.props as { page: PageMeta }
 		<link rel="sitemap" href={normalizePath(`/sitemap-index.xml`)}>
 	</head>
 
-	<body class="Page" dir="auto">
-		<Header class:list={[`Page-Header`]}>
-			<Logo class:list={[`Header-Logo`]} />
+	<body class="page" dir="auto">
+		<Header class:list={[`page__header`]}>
+			<Logo class:list={[`header__logo`]} />
 			<Navigation navLinks={navLinks} />
 		</Header>
 
-		<main class="Page-Content">
+		<main class="page__content">
 			<slot />
 		</main>
 
-		<Footer class:list={[`Page-Footer`]}>
-			<Logo class:list={[`Footer-Logo`]} />
-			<Copyright class:list={[`Footer-Copyright`]} />
+		<Footer class:list={[`page__footer`]}>
+			<Logo class:list={[`footer__logo`]} />
+			<Copyright class:list={[`footer__copyright`]} />
 		</Footer>
 
 	</body>
@@ -79,14 +79,14 @@ import "@/scripts/index.js"
 	initial-value: 1rem;
 }
 
-.Page {
+.page {
 	margin: initial;
 	min-block-size: 100svb;
 	display: block grid;
 	grid-template-rows: auto 1fr;
 }
 
-.Page-Centerer {
+.page__centerer {
 	margin-inline:
 		clamp(
 			1px * var(--ContentIndent-Min),
@@ -106,17 +106,17 @@ import "@/scripts/index.js"
 	}
 }
 
-.Page-Header {
+.page__header {
 	display: block grid;
 	grid: var(--Page-Grid);
 }
 
-.Page-Footer {
+.page__footer {
 	display: block grid;
 	grid: var(--Page-Grid);
 }
 
-.Page-Content {
+.page__content {
 	display: block grid;
 	align-self: start;
 	align-content: start;

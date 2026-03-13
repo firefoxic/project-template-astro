@@ -14,23 +14,23 @@ type Props = {
 let { class: classList, navLinks } = Astro.props
 ---
 
-<nav class:list={[classList, `Navigation`]} aria-label="Main navigation">
+<nav class:list={[classList, `navigation`]} aria-label="Main navigation">
 	<button
-		class="Navigation-Button"
+		class="navigation__button"
 		type="button"
-		aria-controls="Navigation-List"
+		aria-controls="navigation__list"
 		hidden
 	>
-		<span class="Navigation-ButtonText">Toggle navigation list</span>
+		<span class="navigation__button-text">Toggle navigation list</span>
 	</button>
-	<ul class="Navigation-List" id="Navigation-List">
+	<ul class="navigation__list" id="navigation__list">
 		{navLinks.map(({ path, text }: { path: string; text: string }) => {
 			let normalizedPath = normalizePath(path)
 			let isCurrentPage = Astro.url.pathname.replace(/\/$/, ``) === normalizedPath.replace(/\/$/, ``)
 
 			return (
-				<li class="Navigation-Item">
-					<a class="Navigation-Link" href={normalizedPath} aria-current={isCurrentPage ? `page` : undefined} >
+				<li class="navigation__item">
+					<a class="navigation__link" href={normalizedPath} aria-current={isCurrentPage ? `page` : undefined} >
 						{text}
 					</a>
 				</li>
@@ -40,12 +40,12 @@ let { class: classList, navLinks } = Astro.props
 </nav>
 
 <style is:global>
-.Navigation {
+.navigation {
 	position: relative;
 	z-index: 1;
 }
 
-.Navigation-Button {
+.navigation__button {
 	&:not([hidden]) {
 		@media (width < 640px) {
 			display: block flex;
@@ -93,12 +93,12 @@ let { class: classList, navLinks } = Astro.props
 	}
 }
 
-.Navigation-ButtonText {
+.navigation__button-text {
 	position: absolute;
 	scale: 0;
 }
 
-.Navigation-List {
+.navigation__list {
 	margin: 0;
 	padding: 0;
 	display: block flex;
@@ -128,13 +128,13 @@ let { class: classList, navLinks } = Astro.props
 	}
 }
 
-.Navigation-Item {
+.navigation__item {
 	&::marker {
 		color: transparent;
 	}
 }
 
-.Navigation-Link {
+.navigation__link {
 	font-family: var(--FontAccent-Family);
 	text-decoration: none;
 

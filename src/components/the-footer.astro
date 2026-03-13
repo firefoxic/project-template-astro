@@ -6,14 +6,14 @@ type Props = {
 let { class: classList } = Astro.props
 ---
 
-<footer class:list={[classList, `Footer`]}>
-	<div class="Page-Centerer Footer-Container">
+<footer class:list={[classList, `footer`]}>
+	<div class="page__centerer footer__container">
 		<slot />
 	</div>
 </footer>
 
 <style is:global>
-.Footer {
+.footer {
 	background: var(--ColorUI-BG_special);
 
 	@media (width >= 640px) {
@@ -21,7 +21,7 @@ let { class: classList } = Astro.props
 	}
 }
 
-.Footer-Container {
+.footer__container {
 	display: block flex;
 	justify-content: space-between;
 	align-items: center;

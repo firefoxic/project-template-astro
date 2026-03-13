@@ -6,25 +6,25 @@ type Props = {
 let { class: classList } = Astro.props
 ---
 
-<div class:list={[classList, `Copyright`]}>
+<div class:list={[classList, `copyright`]}>
 	Developed by
-	<a class="Copyright-Link" href="https://github.com/firefoxic">
-		<span class="Copyright-Name">firefoxic</span>
+	<a class="copyright__link" href="https://github.com/firefoxic">
+		<span class="copyright__name">firefoxic</span>
 	</a>
 </div>
 
 <style is:global>
-.Copyright {
+.copyright {
 	font-family: var(--FontAccent-Family);
 }
 
-.Copyright-Link {
+.copyright__link {
 	&:hover {
 		color: var(--ColorUI-Accent);
 	}
 }
 
-.Copyright-Name {
+.copyright__name {
 	font-style: italic;
 }
 </style>
