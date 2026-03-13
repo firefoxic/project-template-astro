@@ -1,8 +1,15 @@
 ---
 import { normalizePath } from "../../utils/normalizePath.js"
+
+type Props = {
+	"class"?: string,
+}
+
+let { class: classList } = Astro.props
 ---
 
-<div class:list={[Astro.props.class, `Logo`]}>
+
+<div class:list={[classList, `Logo`]}>
 	<a class="Logo-Link" href={normalizePath(`/`)}>
 		<img class="Logo-Image" src="/images/logo.svg" width="32" height="32" alt="Logotype">
 	</a>

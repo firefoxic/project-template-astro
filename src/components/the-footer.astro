@@ -1,4 +1,12 @@
-<footer class:list={[Astro.props.class, `Footer`]}>
+---
+type Props = {
+	"class"?: string,
+}
+
+let { class: classList } = Astro.props
+---
+
+<footer class:list={[classList, `Footer`]}>
 	<div class="Page-Centerer Footer-Container">
 		<slot />
 	</div>

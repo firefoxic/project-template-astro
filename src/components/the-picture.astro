@@ -1,12 +1,22 @@
 ---
 import { images } from "../shared/data.json" with { type: "json" }
 
+type ImageName = keyof typeof images
+
+type Props = {
+	"name": ImageName,
+	"alt"?: string,
+	"class"?: string,
+	"loading"?: `lazy` | `eager`,
+	"decoding"?: `async` | `auto` | `sync`,
+}
+
 let { name, class: classList, alt = ``, loading = `lazy`, decoding = `async` } = Astro.props
 let { maxDensity, sizes, formats } = images[name]
 ---
 
 <picture>
-	{formats.map((format, formatIndex) => sizes.map(({ breakpoint = ``, width, height }, sizeIndex) => {
+	{formats.map((format, formatIndex) => sizes.map(({ breakpoint = ``, width, height }, sizeIndex: number) => {
 		let isLastFormat = formatIndex === formats.length - 1
 		let isLastSize = sizeIndex === sizes.length - 1
 		let isImgTag = isLastFormat && isLastSize
@@ -25,7 +35,7 @@ let { maxDensity, sizes, formats } = images[name]
 		return isImgTag
 			? (
 				<img
-					class:list={classList}
+					class:list={classList ?? ``}
 					src={src}
 					srcset={srcset}
 					width={width}

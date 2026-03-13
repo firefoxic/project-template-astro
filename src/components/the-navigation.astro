@@ -1,10 +1,20 @@
 ---
 import { normalizePath } from "../../utils/normalizePath.js"
 
-let { navLinks } = Astro.props
+type NavLink = {
+	text: string,
+	path: string,
+}
+
+type Props = {
+	"class"?: string,
+	"navLinks": NavLink[],
+}
+
+let { class: classList, navLinks } = Astro.props
 ---
 
-<nav class="Navigation" aria-label="Main navigation">
+<nav class:list={[classList, `Navigation`]} aria-label="Main navigation">
 	<button
 		class="Navigation-Button"
 		type="button"
@@ -14,7 +24,7 @@ let { navLinks } = Astro.props
 		<span class="Navigation-ButtonText">Toggle navigation list</span>
 	</button>
 	<ul class="Navigation-List" id="Navigation-List">
-		{navLinks.map(({ path, text }) => {
+		{navLinks.map(({ path, text }: { path: string; text: string }) => {
 			let normalizedPath = normalizePath(path)
 			let isCurrentPage = Astro.url.pathname.replace(/\/$/, ``) === normalizedPath.replace(/\/$/, ``)
 

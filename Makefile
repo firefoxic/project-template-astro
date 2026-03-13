@@ -20,13 +20,15 @@ clean: ## 🧹 Clean the project
 	@rm -rf dist
 .PHONY: clean
 
-lint: ## 🧬 Check code by oxlint and stylelint
+lint: ## 🧬 Check code by oxlint, stylelint and typescript
 	@bash -c '\
 		oxlint & pid1=$$! ; \
 		stylelint "src/**/*.{astro,css}" & pid2=$$! ; \
+		astro check & pid3=$$! ; \
 		wait $$pid1 ; code1=$$? ; \
 		wait $$pid2 ; code2=$$? ; \
-		if [ $$code1 -ne 0 ] || [ $$code2 -ne 0 ]; then exit 1 ; fi \
+		wait $$pid3 ; code3=$$? ; \
+		if [ $$code1 -ne 0 ] || [ $$code2 -ne 0 ] || [ $$code3 -ne 0 ]; then exit 1 ; fi \
 	'
 .PHONY: lint
 

@@ -11,7 +11,13 @@ import Fonts from "@/shared/fonts/index.astro"
 
 import { normalizePath } from "../../utils/normalizePath.js"
 
-let { page } = Astro.props
+type PageMeta = {
+	description: string,
+	title: string,
+	lang?: string,
+}
+
+let { page } = Astro.props as { page: PageMeta }
 ---
 
 <!DOCTYPE html>

@@ -16,6 +16,8 @@
 		"astro": "^6.0.2"
 	},
 	"devDependencies": {
+		"@astrojs/check": "^0.9.7",
+		"@astrojs/ts-plugin": "^1.10.7",
 		"@firefoxic/optimize": "^5.1.0",
 		"@firefoxic/oxlint-config": "^0.3.0",
 		"@firefoxic/stylelint-config": "^6.0.1",
@@ -26,6 +28,7 @@
 		"lightningcss": "^1.32.0",
 		"oxlint": "^1.53.0",
 		"stylelint": "^17.4.0",
-		"stylelint-config-html": "^1.1.0"
+		"stylelint-config-html": "^1.1.0",
+		"typescript": "^5.9.3"
 	}
 }

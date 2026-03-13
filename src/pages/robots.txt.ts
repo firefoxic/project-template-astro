@@ -7,10 +7,9 @@ Sitemap: ${new URL(`sitemap-index.xml`, import.meta.env.SITE).href}
 
 /**
  * Handles the GET request for the robots.txt file.
- *
  * @returns {Response} A response object with the robots.txt content and appropriate headers.
  */
-export function GET () {
+export function GET (): Response {
 	return new Response(robotsTxt, {
 		headers: {
 			"Content-Type": `text/plain; charset=utf-8`,

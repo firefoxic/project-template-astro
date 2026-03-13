@@ -1,4 +1,12 @@
-<div class:list={[Astro.props.class, `Copyright`]}>
+---
+type Props = {
+	"class"?: string,
+}
+
+let { class: classList } = Astro.props
+---
+
+<div class:list={[classList, `Copyright`]}>
 	Developed by
 	<a class="Copyright-Link" href="https://github.com/firefoxic">
 		<span class="Copyright-Name">firefoxic</span>
