@@ -10,6 +10,9 @@ mergeGitBranchLockfilesBranchPattern:
   - main
   - release*
 
+overrides:
+  "vite": "^8.0.0"
+
 shellEmulator: true
 
 verifyDepsBeforeRun: install

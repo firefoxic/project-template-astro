@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs"
-import { fileURLToPath, URL } from "node:url"
 
 import sitemap from "@astrojs/sitemap"
 import { getProjectRoot } from "@firefoxic/utils"
@@ -32,11 +31,6 @@ export default defineConfig({
 			cssMinify: `lightningcss`,
 			emptyOutDir: true,
 			target: browserslistToEsbuild(),
-		},
-		resolve: {
-			alias: {
-				"@/": fileURLToPath(new URL(`./src/`, import.meta.url)),
-			},
 		},
 		css: {
 			lightningcss: {
