@@ -13,7 +13,7 @@
 		"@astrojs/sitemap": "^3.7.1",
 		"@fontsource-variable/roboto-flex": "^5.2.8",
 		"@fontsource-variable/roboto-mono": "^5.2.8",
-		"astro": "^6.0.2"
+		"astro": "^6.0.4"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.7",
@@ -26,7 +26,7 @@
 		"browserslist-to-esbuild": "^2.1.1",
 		"eslint-plugin-astro": "^1.6.0",
 		"lightningcss": "^1.32.0",
-		"oxlint": "^1.53.0",
+		"oxlint": "^1.55.0",
 		"stylelint": "^17.4.0",
 		"stylelint-config-html": "^1.1.0",
 		"typescript": "^5.9.3"
