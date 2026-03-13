@@ -1,0 +1,15 @@
+---
+import "./index.css"
+
+type Props = {
+	"class"?: string,
+}
+
+let { class: classList } = Astro.props
+---
+
+<footer class:list={[classList, `footer`]}>
+	<div class="page__centerer footer__container">
+		<slot />
+	</div>
+</footer>

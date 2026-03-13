@@ -1,14 +1,16 @@
 ---
+// oxlint-disable-next-line simple-import-sort/imports
+import TheFonts from "../shared/fonts/index.astro"
 import "../shared/index.css"
 
 import { normalizePath } from "../../utils/normalizePath.js"
-import Copyright from "../components/the-copyright.astro"
-import Footer from "../components/the-footer.astro"
-import Header from "../components/the-header.astro"
-import Logo from "../components/the-logo.astro"
-import Navigation from "../components/the-navigation.astro"
+import TheCopyright from "../components/the-copyright/index.astro"
+import TheFooter from "../components/the-footer/index.astro"
+import TheHeader from "../components/the-header/index.astro"
+import TheLogo from "../components/the-logo/index.astro"
+import TheNavigation from "../components/the-navigation/index.astro"
+import ThePage from "../components/the-page/index.astro"
 import { navLinks } from "../shared/data.json" with { type: "json" }
-import Fonts from "../shared/fonts/index.astro"
 
 type PageMeta = {
 	description: string,
@@ -29,95 +31,23 @@ let { page } = Astro.props as { page: PageMeta }
 		<meta name="description" content={page.description}>
 		<meta name="color-scheme" content="light dark">
 		<title>{page.title}</title>
-		<Fonts />
+		<TheFonts />
 		<link rel="icon" href={normalizePath(`/favicon.ico`)} sizes="32x32">
 		<link rel="icon" href={normalizePath(`/favicon.svg`)} type="image/svg+xml">
 		<link rel="manifest" href={normalizePath(`/manifest.webmanifest`)}>
 		<link rel="sitemap" href={normalizePath(`/sitemap-index.xml`)}>
 	</head>
 
-	<body class="page" dir="auto">
-		<Header class:list={[`page__header`]}>
-			<Logo class:list={[`header__logo`]} />
-			<Navigation navLinks={navLinks} />
-		</Header>
-
-		<main class="page__content">
-			<slot />
-		</main>
-
-		<Footer class:list={[`page__footer`]}>
-			<Logo class:list={[`footer__logo`]} />
-			<Copyright class:list={[`footer__copyright`]} />
-		</Footer>
-
-	</body>
+	<ThePage>
+		<TheHeader class:list={[`page__header`]} slot="header">
+			<TheLogo class:list={[`header__logo`]} />
+			<TheNavigation navLinks={navLinks} />
+		</TheHeader>
+		<slot />
+		<TheFooter class:list={[`page__footer`]} slot="footer">
+			<TheLogo class:list={[`footer__logo`]} />
+			<TheCopyright class:list={[`footer__copyright`]} />
+		</TheFooter>
+	</ThePage>
 
 </html>
-
-<script>
-import "../scripts/index.js"
-</script>
-
-<style is:global>
-@property --ContentIndent-Min {
-	syntax: "<integer>";
-	inherits: false;
-	initial-value: 20;
-}
-
-@property --ContentIndent-Max {
-	syntax: "<integer>";
-	inherits: false;
-	initial-value: 40;
-}
-
-@property --ContentIndent {
-	syntax: "<length>";
-	inherits: true;
-	initial-value: 1rem;
-}
-
-.page {
-	margin: initial;
-	min-block-size: 100svb;
-	display: block grid;
-	grid-template-rows: auto 1fr;
-}
-
-.page__centerer {
-	margin-inline:
-		clamp(
-			1px * var(--ContentIndent-Min),
-			1px * var(--ContentIndent-Min)
-			+
-			(var(--ContentIndent-Max) - var(--ContentIndent-Min))
-			*
-			(100vi - 1px * var(--Breakpoint-Min))
-			/
-			(var(--Breakpoint-Max) - var(--Breakpoint-Min)),
-			calc(1px * var(--ContentIndent-Max))
-		);
-
-	@media (width >= 1280px) {
-		margin-inline: auto;
-		inline-size: calc(1px * (var(--Breakpoint-Max) - 2 * var(--ContentIndent-Max)));
-	}
-}
-
-.page__header {
-	display: block grid;
-	grid: var(--Page-Grid);
-}
-
-.page__footer {
-	display: block grid;
-	grid: var(--Page-Grid);
-}
-
-.page__content {
-	display: block grid;
-	align-self: start;
-	align-content: start;
-}
-</style>

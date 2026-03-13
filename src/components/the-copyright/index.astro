@@ -1,4 +1,6 @@
 ---
+import "./index.css"
+
 type Props = {
 	"class"?: string,
 }
@@ -12,19 +14,3 @@ let { class: classList } = Astro.props
 		<span class="copyright__name">firefoxic</span>
 	</a>
 </div>
-
-<style is:global>
-.copyright {
-	font-family: var(--FontAccent-Family);
-}
-
-.copyright__link {
-	&:hover {
-		color: var(--ColorUI-Accent);
-	}
-}
-
-.copyright__name {
-	font-style: italic;
-}
-</style>

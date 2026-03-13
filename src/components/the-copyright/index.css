@@ -1,0 +1,13 @@
+.copyright {
+	font-family: var(--FontAccent-Family);
+}
+
+.copyright__link {
+	&:hover {
+		color: var(--ColorUI-Accent);
+	}
+}
+
+.copyright__name {
+	font-style: italic;
+}

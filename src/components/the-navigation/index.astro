@@ -1,0 +1,46 @@
+---
+import "./index.css"
+
+import { normalizePath } from "../../../utils/normalizePath.js"
+
+type NavLink = {
+	text: string,
+	path: string,
+}
+
+type Props = {
+	"class"?: string,
+	"navLinks": NavLink[],
+}
+
+let { class: classList, navLinks } = Astro.props
+---
+
+<nav class:list={[classList, `navigation`]} aria-label="Main navigation">
+	<button
+		class="navigation__button"
+		type="button"
+		aria-controls="navigation__list"
+		hidden
+	>
+		<span class="navigation__button-text">Toggle navigation list</span>
+	</button>
+	<ul class="navigation__list" id="navigation__list">
+		{navLinks.map(({ path, text }: { path: string; text: string }) => {
+			let normalizedPath = normalizePath(path)
+			let isCurrentPage = Astro.url.pathname.replace(/\/$/, ``) === normalizedPath.replace(/\/$/, ``)
+
+			return (
+				<li class="navigation__item">
+					<a class="navigation__link" href={normalizedPath} aria-current={isCurrentPage ? `page` : undefined} >
+						{text}
+					</a>
+				</li>
+			)
+		})}
+	</ul>
+</nav>
+
+<script>
+import "../../scripts/index.js"
+</script>

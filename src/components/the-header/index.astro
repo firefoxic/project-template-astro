@@ -1,0 +1,15 @@
+---
+import "./index.css"
+
+type Props = {
+	"class"?: string,
+}
+
+let { class: classList } = Astro.props
+---
+
+<header class:list={[classList, `header`]}>
+	<div class="page__centerer header__container">
+		<slot />
+	</div>
+</header>

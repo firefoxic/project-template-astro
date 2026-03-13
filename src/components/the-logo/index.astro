@@ -1,0 +1,18 @@
+---
+import "./index.css"
+
+import { normalizePath } from "../../../utils/normalizePath.js"
+
+type Props = {
+	"class"?: string,
+}
+
+let { class: classList } = Astro.props
+---
+
+
+<div class:list={[classList, `logo`]}>
+	<a class="logo__link" href={normalizePath(`/`)}>
+		<img class="logo__image" src="/images/logo.svg" width="32" height="32" alt="Logotype">
+	</a>
+</div>
