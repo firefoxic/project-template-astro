@@ -13,6 +13,9 @@ mergeGitBranchLockfilesBranchPattern:
 overrides:
   "vite": "^8.0.0"
 
+patchedDependencies:
+  vite: patches/vite.patch
+
 shellEmulator: true
 
 verifyDepsBeforeRun: install

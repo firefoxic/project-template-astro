@@ -1,0 +1,13 @@
+diff --git a/dist/node/chunks/node.js b/dist/node/chunks/node.js
+index 8901df3f57811a64059f371941ac35300326d05d..9dce58d8712cf377bebccdbb1075d2ef2cdf7bab 100644
+--- a/dist/node/chunks/node.js
++++ b/dist/node/chunks/node.js
+@@ -19122,7 +19122,7 @@ const nestedQuotesRE = /"[^"']*'[^"]*"|'[^'"]*"[^']*'/;
+ function svgToDataURL(content) {
+ 	const stringContent = content.toString();
+ 	if (stringContent.includes("<text") || stringContent.includes("<foreignObject") || nestedQuotesRE.test(stringContent)) return `data:image/svg+xml;base64,${content.toString("base64")}`;
+-	else return "data:image/svg+xml," + stringContent.trim().replaceAll(/>\s+</g, "><").replaceAll("\"", "'").replaceAll("%", "%25").replaceAll("#", "%23").replaceAll("<", "%3c").replaceAll(">", "%3e").replaceAll(/\s+/g, "%20");
++	else return "data:image/svg+xml," + stringContent.trim().replaceAll(/>\s+</g, "><").replaceAll("\"", "'").replaceAll("%", "%25").replaceAll("#", "%23").replaceAll(/\s+/g, " ");
+ }
+ //#endregion
+ //#region ../../node_modules/.pnpm/lilconfig@3.1.3/node_modules/lilconfig/src/index.js

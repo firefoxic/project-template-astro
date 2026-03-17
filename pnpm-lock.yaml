@@ -7,6 +7,11 @@ settings:
 overrides:
   vite: ^8.0.0
 
+patchedDependencies:
+  vite:
+    hash: 8d16c604081aacbef5ba4bdf7c54739d433305d71f755e538be7696cb0f546ad
+    path: patches/vite.patch
+
 importers:
 
   .:
@@ -1795,8 +1800,8 @@ packages:
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
-  lru-cache@11.2.6:
-    resolution: {integrity: sha512-ESL2CrkS/2wTPfuend7Zhkzo2u0daGJ/A2VucJOgQ/C48S/zB8MMeMHSGKYpXhIjbPxfuezITkaBH1wqv00DDQ==}
+  lru-cache@11.2.7:
+    resolution: {integrity: sha512-aY/R+aEsRelme17KGQa/1ZSIpLpNYYrhcrepKTZgE+W3WM16YMCaPwOHLHsmopZHELU0Ojin1lPVxKR0MihncA==}
     engines: {node: 20 || >=22}
 
   magic-string@0.30.21:
@@ -2371,8 +2376,8 @@ packages:
     resolution: {integrity: sha512-Ae3OVUqifDw0wBriIBS7yVaW44Dp6eSHQcyq4Igc7eN2TJH/2YsicswaW+J/OuMvhpDPOKEgpAZCjkb4hpoyeA==}
     engines: {node: ^16.14.0 || >= 17.3.0}
 
-  tinyexec@1.0.2:
-    resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
+  tinyexec@1.0.4:
+    resolution: {integrity: sha512-u9r3uZC0bdpGOXtlxUIdwf9pkmvhqJdrVCH9fapQtgy/OeTTMZ1nqH7agtvEfmGui6e1XxjcdrlxvxJvc3sMqw==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -3649,7 +3654,7 @@ snapshots:
       smol-toml: 1.6.0
       svgo: 4.0.1
       tinyclip: 0.1.12
-      tinyexec: 1.0.2
+      tinyexec: 1.0.4
       tinyglobby: 0.2.15
       tsconfck: 3.1.6(typescript@5.9.3)
       ultrahtml: 1.6.0
@@ -3657,8 +3662,8 @@ snapshots:
       unist-util-visit: 5.1.0
       unstorage: 1.17.4
       vfile: 6.0.3
-      vite: 8.0.0(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2)
-      vitefu: 1.1.2(vite@8.0.0(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2))
+      vite: 8.0.0(patch_hash=8d16c604081aacbef5ba4bdf7c54739d433305d71f755e538be7696cb0f546ad)(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2)
+      vitefu: 1.1.2(vite@8.0.0(patch_hash=8d16c604081aacbef5ba4bdf7c54739d433305d71f755e538be7696cb0f546ad)(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.3.6
@@ -4427,7 +4432,7 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  lru-cache@11.2.6: {}
+  lru-cache@11.2.7: {}
 
   magic-string@0.30.21:
     dependencies:
@@ -5294,7 +5299,7 @@ snapshots:
 
   tinyclip@0.1.12: {}
 
-  tinyexec@1.0.2: {}
+  tinyexec@1.0.4: {}
 
   tinyglobby@0.2.15:
     dependencies:
@@ -5402,7 +5407,7 @@ snapshots:
       chokidar: 5.0.0
       destr: 2.0.5
       h3: 1.15.6
-      lru-cache: 11.2.6
+      lru-cache: 11.2.7
       node-fetch-native: 1.6.7
       ofetch: 1.5.1
       ufo: 1.6.3
@@ -5434,7 +5439,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.0.0(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2):
+  vite@8.0.0(patch_hash=8d16c604081aacbef5ba4bdf7c54739d433305d71f755e538be7696cb0f546ad)(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2):
     dependencies:
       '@oxc-project/runtime': 0.115.0
       lightningcss: 1.32.0
@@ -5448,9 +5453,9 @@ snapshots:
       fsevents: 2.3.3
       yaml: 2.8.2
 
-  vitefu@1.1.2(vite@8.0.0(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2)):
+  vitefu@1.1.2(vite@8.0.0(patch_hash=8d16c604081aacbef5ba4bdf7c54739d433305d71f755e538be7696cb0f546ad)(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2)):
     optionalDependencies:
-      vite: 8.0.0(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2)
+      vite: 8.0.0(patch_hash=8d16c604081aacbef5ba4bdf7c54739d433305d71f755e538be7696cb0f546ad)(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.2)
 
   volar-service-css@0.0.68(@volar/language-service@2.4.28):
     dependencies:
